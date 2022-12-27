@@ -1,0 +1,63 @@
+.portfolio {
+  .container {
+    padding-top: 126px;
+    text-align: center;
+  }
+  &__title {
+    position: relative;
+    padding-top: 6px;
+    @include before_circle;
+    &:before {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    };
+  }
+  &__wrapper {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    grid-template-rows: repeat(2, 280px);
+    /* grid-auto-rows: repeat(4, 280px); */
+    gap: 5px;
+    grid-template-areas: 
+      "uber pulse bread plans"
+      "ipad mac mac plans";
+  } 
+  &__item {
+    transition: all 0.6s;
+    &:hover {
+      transform: scale(1.05);
+      filter: grayscale(100%);
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #uber {
+    grid-area: uber;
+  }
+
+  #pulse {
+    grid-area: pulse;
+  }
+
+  #bread {
+    grid-area: bread;
+  }
+
+  #plans {
+    grid-area: plans;
+  }
+
+  #ipad {
+    grid-area: ipad;
+  }
+
+  #mac {
+    grid-area: mac;
+  }
+}

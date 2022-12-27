@@ -1,0 +1,28 @@
+@mixin before_circle {
+  &:before {
+    position: absolute;
+    content: '';
+    width: 36px;
+    height: 36px;
+    background-color: $main-color;
+    border-radius: 100%;
+    z-index: -1;
+    left: 0px;
+    top: -25%;
+  }
+}
+
+@mixin social_hover {
+  &:hover {
+    svg path {
+      fill: $icon-hover-color;
+    }
+  }
+}
+
+@mixin subline {
+  width: 60px;
+  height: 3px;
+  background-color: $main-color;
+  margin: 25px auto 0 auto;
+}

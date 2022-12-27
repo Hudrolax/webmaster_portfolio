@@ -1,0 +1,87 @@
+.containger {
+  max-width: 1040px;
+}
+
+#main_photo {
+  grid-area: main_photo;
+}
+
+#about_me {
+  grid-area: about_me;
+}
+
+#skills {
+  grid-area: skills;
+}
+
+.aboutme {
+  &_grid_container {
+    margin: 120px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, auto));
+    grid-template-rows: repeat(2, minmax(260px, auto));
+    grid-column-gap: 70px;
+    grid-row-gap: 40px;
+    grid-template-areas: 
+      "main_photo about_me"
+      "main_photo skills";
+  }
+  &__title {
+    padding-left: 14px;
+    position: relative;
+    @include before_circle;
+  }
+  .subline {
+    margin: 4px 0 0 0;
+  }
+  &__text {
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+  }
+  .main_photo {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.subgrid-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, auto));
+  grid-template-rows: repeat(2, minmax(116px, auto));
+  grid-auto-columns: minmax(260px, auto);
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+}
+
+.subgrid-elem {
+  .wrapper {
+    padding-left: 60px;
+    &__text {
+      padding-top: 6px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #000000;
+    }
+  }
+  .icon {
+    position: relative;
+    img {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+    @include before_circle;
+    &:before {
+      top: 0;
+    }
+  }
+}
